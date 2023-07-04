@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public class I18nEnglishGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
-        return "Hello World";
+        return "Profile: EN\nHello World";
     }
 }

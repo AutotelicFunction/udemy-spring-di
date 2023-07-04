@@ -9,6 +9,6 @@ public class I18nGermanGreetingService implements GreetingService{
 
     @Override
     public String sayGreeting() {
-        return "Hallo Welt";
+        return "Profile: DE\nHallo Welt";
     }
 }
