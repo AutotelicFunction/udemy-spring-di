@@ -1,14 +1,18 @@
 package guru.springframework.udemydi.controllers;
 
 
+import guru.springframework.udemydi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String helloWorld() {
-        System.out.println("Hello World!");
+    private final GreetingService greetingService;
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
 
-        return "Hi! :)";
+    public String helloWorld() {
+        return greetingService.sayGreeting();
     }
 }

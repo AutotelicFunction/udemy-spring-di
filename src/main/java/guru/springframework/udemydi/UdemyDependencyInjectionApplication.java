@@ -16,10 +16,8 @@ public class UdemyDependencyInjectionApplication {
 
 		MyController myController = (MyController) appCTX.getBean("myController");
 
-		String retVal = myController.helloWorld();
-
-		System.out.println(retVal);
-
+		System.out.println("------------- Primary ----------------");
+		System.out.println(myController.helloWorld());
 
 
 		System.out.println("------------- Property ----------------");
