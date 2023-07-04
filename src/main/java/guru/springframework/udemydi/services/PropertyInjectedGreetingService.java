@@ -3,9 +3,9 @@ package guru.springframework.udemydi.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class PropertyInjectedGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Guten Tag!";
+        return "Guten Tag! - Property";
     }
 }

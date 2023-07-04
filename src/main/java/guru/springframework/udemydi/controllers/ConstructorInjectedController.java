@@ -2,15 +2,16 @@ package guru.springframework.udemydi.controllers;
 
 import guru.springframework.udemydi.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class ConstructorInjectedController {
 
-    @Autowired
-    public GreetingService greetingService;
 
-    public ConstructorInjectedController(GreetingService greetingService) {
+    private final GreetingService greetingService;
+
+    public ConstructorInjectedController(@Qualifier("constructorInjectedGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
