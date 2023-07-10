@@ -1,9 +1,8 @@
 package guru.springframework.udemydi.services;
 
-
-public class PrimaryGreetingService implements GreetingService{
+public class I18nSpanishGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hey guys - Primary";
+        return "Hola Mundo - ES";
     }
 }

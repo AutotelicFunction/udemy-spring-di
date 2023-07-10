@@ -4,12 +4,19 @@ import guru.springframework.udemydi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan({"guru.springframework.udemydi", "com.springframework.pets"})
 @SpringBootApplication
 public class UdemyDependencyInjectionApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext appCTX = SpringApplication.run(UdemyDependencyInjectionApplication.class, args);
+
+
+		System.out.println("------------- Pets");
+		PetController petController = (PetController) appCTX.getBean("petController");
+		System.out.println(petController.whichPetIsTheBest());
 
 
 		System.out.println("------------- Profile");

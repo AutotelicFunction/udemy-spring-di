@@ -1,13 +1,16 @@
 package guru.springframework.udemydi.services;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import guru.springframework.udemydi.repositories.EnglishGreetingRepository;
 
-@Profile({"EN", "default"})
-@Service("i18nService")
 public class I18nEnglishGreetingService implements GreetingService{
-    @Override
+
+    private final EnglishGreetingRepository englishGreetingRepository;
+
+    public I18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository) {
+        this.englishGreetingRepository = englishGreetingRepository;
+    }
+
     public String sayGreeting() {
-        return "Profile: EN\nHello World";
+        return this.englishGreetingRepository.sayGreeting();
     }
 }
