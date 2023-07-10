@@ -3,11 +3,12 @@ package guru.springframework.udemydi.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile({"EN", "default"})
+@Profile("DE")
 @Service("i18nService")
-public class I18nEnglishGreetingService implements GreetingService{
+public class I18nGermanGreetingService implements GreetingService{
+
     @Override
     public String sayGreeting() {
-        return "Profile: EN\nHello World";
+        return "Profile: DE\nHallo Welt";
     }
 }
