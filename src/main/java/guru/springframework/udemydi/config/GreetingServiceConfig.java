@@ -60,11 +60,6 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    //@Bean
-    ConstructorInjectedGreetingService constructorInjectedGreetingService() {
-        return new ConstructorInjectedGreetingService();
-    }
-
     @Bean
     SetterInjectedGreetingService setterInjectedGreetingService() {
         return new SetterInjectedGreetingService();

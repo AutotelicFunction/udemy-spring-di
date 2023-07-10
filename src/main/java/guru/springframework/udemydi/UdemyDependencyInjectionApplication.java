@@ -1,6 +1,8 @@
 package guru.springframework.udemydi;
 
 import guru.springframework.udemydi.controllers.*;
+import guru.springframework.udemydi.services.PrototypeBean;
+import guru.springframework.udemydi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -44,6 +46,17 @@ public class UdemyDependencyInjectionApplication {
 		System.out.println(constructorInjectedController.getGreeting());
 
 
+		System.out.println("------------- Scopes");
+		SingletonBean singletonBean1 = appCTX.getBean(SingletonBean.class);
+		System.out.println(singletonBean1.getMyScope());
+
+		SingletonBean singletonBean2 = appCTX.getBean(SingletonBean.class);
+		System.out.println(singletonBean2.getMyScope());
+
+		PrototypeBean prototypeBean1 = appCTX.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getMyScope());
+		PrototypeBean prototypeBean2 = appCTX.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean2.getMyScope());
 	}
 
 }
