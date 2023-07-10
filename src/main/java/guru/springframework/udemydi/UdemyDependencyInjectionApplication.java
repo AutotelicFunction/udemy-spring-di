@@ -15,7 +15,7 @@ public class UdemyDependencyInjectionApplication {
 
 
 		System.out.println("------------- Pets");
-		PetController petController = (PetController) appCTX.getBean("petController");
+		PetController petController = appCTX.getBean("petController", PetController.class);
 		System.out.println(petController.whichPetIsTheBest());
 
 

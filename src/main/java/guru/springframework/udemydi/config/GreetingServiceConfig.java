@@ -1,5 +1,7 @@
 package guru.springframework.udemydi.config;
 
+import com.springframework.pets.PetService;
+import com.springframework.pets.PetServiceFactory;
 import guru.springframework.udemydi.repositories.EnglishGreetingRepository;
 import guru.springframework.udemydi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.udemydi.services.*;
@@ -14,6 +16,22 @@ import java.lang.reflect.Constructor;
 @Configuration
 public class GreetingServiceConfig {
 
+    @Bean
+    PetServiceFactory petServiceFactory() {
+        return new PetServiceFactory();
+    }
+
+    @Profile({"dog", "default"})
+    @Bean
+    PetService dogPetService(PetServiceFactory petServiceFactory) {
+        return petServiceFactory.getPetService("dog");
+    }
+
+    @Profile("cat")
+    @Bean
+    PetService catPetService(PetServiceFactory petServiceFactory) {
+        return petServiceFactory.getPetService("cat");
+    }
 
     @Bean
     EnglishGreetingRepository englishGreetingRepository() {
