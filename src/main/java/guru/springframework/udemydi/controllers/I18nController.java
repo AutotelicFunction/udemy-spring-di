@@ -4,9 +4,6 @@ import guru.springframework.udemydi.services.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-/**
- * Created by jt on 12/27/19.
- */
 @Controller
 public class I18nController {
 
@@ -16,7 +13,7 @@ public class I18nController {
         this.greetingService = greetingService;
     }
 
-    public String sayHello(){
+    public String helloWorld() {
         return greetingService.sayGreeting();
     }
 }
