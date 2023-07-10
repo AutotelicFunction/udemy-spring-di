@@ -3,12 +3,12 @@ package guru.springframework.udemydi.services;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by jt on 12/27/19.
+ * Created by jt on 12/26/19.
  */
 @Service
-public class SetterInjectedGreetingService implements GreetingService{
+public class ConstructorGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hello World - Setter";
+        return "Hello World - Constructor";
     }
 }
