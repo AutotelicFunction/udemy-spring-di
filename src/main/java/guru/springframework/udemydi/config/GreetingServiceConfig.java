@@ -1,6 +1,8 @@
 package guru.springframework.udemydi.config;
 
-import guru.springframework.udemydi.services.ConstructorGreetingService;
+import guru.springframework.udemydi.services.ConstructorInjectedGreetingService;
+import guru.springframework.udemydi.services.PropertyInjectedGreetingService;
+import guru.springframework.udemydi.services.SetterInjectedGreetingService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,8 +12,18 @@ import java.lang.reflect.Constructor;
 public class GreetingServiceConfig {
 
     @Bean
-    ConstructorGreetingService constructorGreetingService() {
-        return new ConstructorGreetingService();
+    ConstructorInjectedGreetingService constructorInjectedGreetingService() {
+        return new ConstructorInjectedGreetingService();
+    }
+
+    @Bean
+    SetterInjectedGreetingService setterInjectedGreetingService() {
+        return new SetterInjectedGreetingService();
+    }
+
+    @Bean
+    PropertyInjectedGreetingService propertyInjectedGreetingService() {
+        return new PropertyInjectedGreetingService();
     }
 
 }
