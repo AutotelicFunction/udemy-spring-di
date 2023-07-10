@@ -5,14 +5,11 @@ import com.springframework.pets.PetServiceFactory;
 import guru.springframework.udemydi.repositories.EnglishGreetingRepository;
 import guru.springframework.udemydi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.udemydi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.*;
 
 import java.lang.reflect.Constructor;
 
+@ImportResource("classpath:DI-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -63,7 +60,7 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean
+    //@Bean
     ConstructorInjectedGreetingService constructorInjectedGreetingService() {
         return new ConstructorInjectedGreetingService();
     }
