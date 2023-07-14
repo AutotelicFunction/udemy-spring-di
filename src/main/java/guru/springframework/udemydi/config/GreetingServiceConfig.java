@@ -7,11 +7,12 @@ import guru.springframework.udemydi.repositories.EnglishGreetingRepository;
 import guru.springframework.udemydi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.udemydi.services.*;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 
-import java.lang.reflect.Constructor;
-
-@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:DI-config.xml")
 @Configuration
 public class GreetingServiceConfig {

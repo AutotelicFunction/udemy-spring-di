@@ -1,0 +1,4 @@
+udemy:
+  username: DEVuser
+  password: DEVpw
+  jdbcurl: DEV_URL

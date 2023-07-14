@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active:
+      - cat
+      - DE
+      - prod
+udemy:
+  username: YMLsuperuser
+  password: YMLp@ssw0rt
+  jdbcurl: YMLsomeURLcurl

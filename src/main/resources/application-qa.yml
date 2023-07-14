@@ -1,0 +1,4 @@
+udemy:
+  username: QAuser
+  password: QApw
+  jdbcurl: QA_URL
