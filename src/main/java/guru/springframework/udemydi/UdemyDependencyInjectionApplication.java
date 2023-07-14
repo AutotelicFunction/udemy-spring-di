@@ -1,16 +1,18 @@
 package guru.springframework.udemydi;
 
 import guru.springframework.udemydi.config.UdemyConfiguration;
+import guru.springframework.udemydi.config.UdemyConstructorConfig;
 import guru.springframework.udemydi.controllers.*;
 import guru.springframework.udemydi.datasource.FakeDataSource;
 import guru.springframework.udemydi.services.PrototypeBean;
 import guru.springframework.udemydi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"guru.springframework.udemydi", "com.springframework.pets"})
+@ComponentScan({"guru.springframework.1udemydi", "com.springframework.pets"})
 @SpringBootApplication
 public class UdemyDependencyInjectionApplication {
 
@@ -72,6 +74,13 @@ public class UdemyDependencyInjectionApplication {
 		System.out.println(udemyConfiguration.getJdbcurl());
 		System.out.println(udemyConfiguration.getUsername());
 		System.out.println(udemyConfiguration.getPassword());
+
+		System.out.println("------------- Configuration Constructor Properties Bean");
+		UdemyConstructorConfig udemyConstructorConfig = appCTX.getBean(UdemyConstructorConfig.class);
+		System.out.println(udemyConstructorConfig.getJdbcurl());
+		System.out.println(udemyConstructorConfig.getUsername());
+		System.out.println(udemyConstructorConfig.getPassword());
+
 	}
 
 }

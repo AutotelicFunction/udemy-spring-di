@@ -7,22 +7,26 @@ import guru.springframework.udemydi.repositories.EnglishGreetingRepository;
 import guru.springframework.udemydi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.udemydi.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
+
+
+@EnableConfigurationProperties(UdemyConstructorConfig.class)
 @ImportResource("classpath:DI-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDataSource fakeDataSource(UdemyConfiguration udemyConfiguration) {
+    FakeDataSource fakeDataSource(UdemyConstructorConfig udemyConstructorConfig) {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(udemyConfiguration.getUsername());
-        fakeDataSource.setPassword(udemyConfiguration.getPassword());
-        fakeDataSource.setJdbcurl(udemyConfiguration.getJdbcurl());
+        fakeDataSource.setUsername(udemyConstructorConfig.getUsername());
+        fakeDataSource.setPassword(udemyConstructorConfig.getPassword());
+        fakeDataSource.setJdbcurl(udemyConstructorConfig.getJdbcurl());
 
         return fakeDataSource;
     }
