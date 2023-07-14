@@ -18,13 +18,11 @@ import org.springframework.context.annotation.Profile;
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDataSource fakeDataSource(@Value("${udemy.username}") String username,
-                                  @Value("${udemy.password}") String password,
-                                  @Value("${udemy.jdbcurl}") String jdbcurl) {
+    FakeDataSource fakeDataSource(UdemyConfiguration udemyConfiguration) {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(username);
-        fakeDataSource.setPassword(password);
-        fakeDataSource.setJdbcurl(jdbcurl);
+        fakeDataSource.setUsername(udemyConfiguration.getUsername());
+        fakeDataSource.setPassword(udemyConfiguration.getPassword());
+        fakeDataSource.setJdbcurl(udemyConfiguration.getJdbcurl());
 
         return fakeDataSource;
     }

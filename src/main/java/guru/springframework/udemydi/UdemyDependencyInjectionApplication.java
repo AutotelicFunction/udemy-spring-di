@@ -1,5 +1,6 @@
 package guru.springframework.udemydi;
 
+import guru.springframework.udemydi.config.UdemyConfiguration;
 import guru.springframework.udemydi.controllers.*;
 import guru.springframework.udemydi.datasource.FakeDataSource;
 import guru.springframework.udemydi.services.PrototypeBean;
@@ -64,6 +65,13 @@ public class UdemyDependencyInjectionApplication {
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+
+		System.out.println("------------- Configuration Properties Bean");
+		UdemyConfiguration udemyConfiguration = appCTX.getBean(UdemyConfiguration.class);
+		System.out.println(udemyConfiguration.getJdbcurl());
+		System.out.println(udemyConfiguration.getUsername());
+		System.out.println(udemyConfiguration.getPassword());
 	}
 
 }
