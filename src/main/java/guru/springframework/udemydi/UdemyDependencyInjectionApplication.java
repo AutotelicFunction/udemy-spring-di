@@ -1,6 +1,7 @@
 package guru.springframework.udemydi;
 
 import guru.springframework.udemydi.controllers.*;
+import guru.springframework.udemydi.datasource.FakeDataSource;
 import guru.springframework.udemydi.services.PrototypeBean;
 import guru.springframework.udemydi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -57,6 +58,12 @@ public class UdemyDependencyInjectionApplication {
 		System.out.println(prototypeBean1.getMyScope());
 		PrototypeBean prototypeBean2 = appCTX.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
+
+		System.out.println("------------- FakeDataSource");
+		FakeDataSource fakeDataSource = appCTX.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getJdbcurl());
 	}
 
 }
